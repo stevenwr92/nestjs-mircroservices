@@ -10,13 +10,13 @@ phases:
       - docker tag reservations:latest 431270210504.dkr.ecr.ap-southeast-3.amazonaws.com/reservations:latest
 
       - docker build -t auth -f ./apps/auth/Dockerfile .
-      - docker tag auth:latest 431270210504.dkr.ecr.ap-southeast-3.amazonaws.com/reservations:latest
+      - docker tag auth:latest 431270210504.dkr.ecr.ap-southeast-3.amazonaws.com/auth:latest
 
       - docker build -t notifications -f ./apps/notifications/Dockerfile .
-      - docker tag notifications:latest 431270210504.dkr.ecr.ap-southeast-3.amazonaws.com/reservations:latest
+      - docker tag notifications:latest 431270210504.dkr.ecr.ap-southeast-3.amazonaws.com/notifications:latest
 
       - docker build -t payments -f ./apps/payments/Dockerfile .
-      - docker tag payments:latest 431270210504.dkr.ecr.ap-southeast-3.amazonaws.com/reservations:latest
+      - docker tag payments:latest 431270210504.dkr.ecr.ap-southeast-3.amazonaws.com/payments:latest
   post_build:
     commands:
       - docker push 431270210504.dkr.ecr.ap-southeast-3.amazonaws.com/reservations:latest
