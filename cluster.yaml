@@ -1,0 +1,23 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: testCluster
+  region: ap-southeast-3
+
+
+vpc:
+  id: "vpc-096a495be5c11ff39"
+  subnets:
+    public:
+      ap-southeast-3:
+        id: 'subnet-0a61b330063e6e2f5'
+      ap-southeast-3b:
+        id: 'subnet-0dea2ecfc1ae36aa0'
+
+
+nodeGroups:
+- name: ng-1
+  instanceType: t3.micro
+  desiredCapacity: 3
+

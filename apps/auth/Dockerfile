@@ -9,12 +9,12 @@ COPY nest-cli.json nest-cli.json
 
 RUN npm install -g pnpm
 
-COPY apps/reservations apps/reservations
+COPY apps/auth apps/auth
 COPY libs libs
 
-RUN pnpm install -r
+RUN pnpm install -r 
 
-RUN pnpm run build reservations
+RUN pnpm run build auth
 
 FROM node:alpine as production
 
