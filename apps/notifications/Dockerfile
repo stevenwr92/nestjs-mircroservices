@@ -9,7 +9,7 @@ COPY nest-cli.json nest-cli.json
 
 RUN npm install -g pnpm
 
-COPY apps/auth apps/auth
+COPY apps/notifications apps/notifications
 COPY libs libs
 
 RUN pnpm install -r 
