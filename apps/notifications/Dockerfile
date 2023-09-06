@@ -9,11 +9,12 @@ COPY nest-cli.json nest-cli.json
 
 RUN npm install -g pnpm
 
+COPY apps/auth apps/auth
+COPY libs libs
+
 RUN pnpm install -r 
 
-COPY . . 
-
-RUN pnpm run build
+RUN pnpm run build notifications
 
 FROM node:alpine as production
 
